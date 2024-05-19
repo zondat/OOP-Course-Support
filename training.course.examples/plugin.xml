@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated digraph -->
+      <package
+            uri="https://training.course.example.digraph"
+            class="digraph.DigraphPackage"
+            genModel="model/digraph.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated voronoi -->
+      <package
+            uri="https://training.course.example.voronoi"
+            class="voronoi.VoronoiPackage"
+            genModel="model/voronoi.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graph -->
+      <package
+            uri="https://training.course.examples/path-finding"
+            class="pathfinding.graph.GraphPackage"
+            genModel="model/graph.genmodel"/>
+   </extension>
+
+</plugin>

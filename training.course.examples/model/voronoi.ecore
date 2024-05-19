@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="voronoi" nsURI="https://training.course.example.voronoi" nsPrefix="vr">
+  <eClassifiers xsi:type="ecore:EClass" name="VoronoiDiagram">
+    <eOperations name="computeCells"/>
+    <eOperations name="visualize"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="islands" upperBound="-1"
+        eType="#//Point" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="standard" eType="#//DistanceStandard"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
+        eType="#//Cell" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="grid" eType="#//Grid" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cell">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="core" eType="#//Point"
+        eOpposite="#//Point/associatedCell"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerPoints" upperBound="-1"
+        eType="#//Point" eOpposite="#//Point/boundingCell"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DistanceStandard" abstract="true" interface="true">
+    <eOperations name="computeDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="x" eType="#//Point"/>
+      <eParameters name="y" eType="#//Point"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Descartes" eSuperTypes="#//DistanceStandard"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Manhattan" eSuperTypes="#//DistanceStandard"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Point">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedCell" eType="#//Cell"
+        eOpposite="#//Cell/core"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundingCell" eType="#//Cell"
+        eOpposite="#//Cell/innerPoints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Grid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numCols" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numRows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="points" upperBound="-1"
+        eType="#//Point" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
