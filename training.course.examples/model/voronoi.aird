@@ -4,7 +4,7 @@
     <semanticResources>voronoi.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_YlxrwAR6Ee-a4bSZgGFoTQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ZuBtQAR6Ee-a4bSZgGFoTQ" name="voronoi class diagram" repPath="#_ZtkaQAR6Ee-a4bSZgGFoTQ" changeId="1714444977124">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ZuBtQAR6Ee-a4bSZgGFoTQ" name="voronoi class diagram" repPath="#_ZtkaQAR6Ee-a4bSZgGFoTQ" changeId="1716173130015">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="voronoi.ecore#/"/>
       </ownedRepresentationDescriptors>
